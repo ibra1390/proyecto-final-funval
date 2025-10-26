@@ -7,7 +7,40 @@
     <script src="./src/scripts/main.js" defer></script>
     <title>PF Windbnd Vanilla</title>
 </head>
-<body>
-    <h1 class="bg-red-200 text-white text-2xl">Hola mundo!</h1>
+<body class="min-h-screen flex flex-col">
+
+    <!-- header -->
+    <header class="flex flex-col sm:justify-between sm:flex-row p-4 gap-4">
+        <div id="logo">
+            <img src="./src/images/icons/logo-f7862584.svg" class="p-4" alt="windbnb logo">
+        </div>
+        <!-- Searchbar -->
+         <div class="flex justify-center sm:pr-4">
+            <search class="flex mt-2 border border-gray-200 shadow-sm rounded-2xl w-[90%] sm:w-96" >
+                <div class="flex-1 border-r border-gray-200 flex items-center justify-center py-3">
+                    <p class="text-gray-400 text-sm text-center">Add location</p>
+                </div>
+                <div class="flex-1 border-r border-gray-200 flex items-center justify-center py-3">
+                    <p class="text-gray-400 text-sm text-center">Add guests</p>
+                </div>
+                <div class="flex items-center justify-center p-3">
+                    <button class="p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 stroke-red-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                    </button>
+                </div>
+            </search>
+         </div>
+    </header>
+
+    <!-- main -->
+    <main>
+        <div>
+            <h2><strong>Stays in Finland</strong></h2>
+        </div>
+    </main>
+
+    
 </body>
 </html>
