@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/output.css">
-    <script src="./src/scripts/main.js" defer></script>
+    <script src="./src/scripts/main.js" defer type="module"></script>
     <title>PF Windbnd Vanilla</title>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -12,16 +12,16 @@
     <!-- header -->
     <header class="flex flex-col sm:justify-between sm:flex-row p-4 gap-4">
         <div id="logo">
-            <img src="./src/images/icons/logo-f7862584.svg" class="p-4" alt="windbnb logo">
+            <img src="./src/images/icons/logo-f7862584.svg" class="p-4 md:h-16" alt="windbnb logo">
         </div>
         <!-- Searchbar -->
          <div class="flex justify-center sm:pr-4">
-            <search class="flex mt-2 border border-gray-200 shadow-sm rounded-2xl w-[90%] sm:w-96" >
+            <search class="flex mt-2 border border-gray-200 shadow-sm rounded-2xl w-[90%] sm:w-75" >
                 <div class="flex-1 border-r border-gray-200 flex items-center justify-center py-3">
-                    <p class="text-gray-400 text-sm text-center">Add location</p>
+                    <p class="text-gray-400 text-xs text-center font-montserrat">Add location</p>
                 </div>
                 <div class="flex-1 border-r border-gray-200 flex items-center justify-center py-3">
-                    <p class="text-gray-400 text-sm text-center">Add guests</p>
+                    <p class="text-gray-400 text-xs text-center font-montserrat">Add guests</p>
                 </div>
                 <div class="flex items-center justify-center p-3">
                     <button class="p-1">
@@ -35,12 +35,16 @@
     </header>
 
     <!-- main -->
-    <main>
-        <div>
-            <h2><strong>Stays in Finland</strong></h2>
+    <main class="flex flex-col p-5 sm:m-5 lg:m-6 xl:m-7">
+        <div class="flex justify-between">
+            <h2 class="text-2xl font-bold font-montserrat">Stays in Finland</h2>
+            <p id="contador-stays" class="mt-2 text-gray-800 font-montserrat text-sm md:text-base"></p>
         </div>
-    </main>
-
+        <!-- Cards container -->
+        <div id="stays-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
+            <!-- Cards generadas dinamicamente -->
+        </div>
+    </main> 
     
 </body>
 </html>

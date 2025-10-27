@@ -1,5 +1,14 @@
-/**
- * Aquí estará la lógica principal de la aplicación.
- * Este bloque de código contiene la funcionalidad principal
- * que define el comportamiento del programa.
- */
+import { stays } from "./stays.js";
+import { crearCards } from "./utils.js";
+
+//Contenedor de cards
+let contenedorStays = document.querySelector("#stays-container");
+stays.forEach((stay) => {
+    contenedorStays.innerHTML += crearCards(stay);
+})
+
+//Contador de cards mostradas
+let staysContador = document.querySelector("#contador-stays");
+staysContador.textContent = "12+ stays";
+//staysContador.textContent = `${stays.length}+ stays`;
+
