@@ -45,6 +45,52 @@
             <!-- Cards generadas dinamicamente -->
         </div>
     </main> 
+
+    <!-- Modal para filtros -->
+    <div id="modal" class="bg-black/50 inset-0 fixed z-50">
+        <div class="bg-white h-[80%] w-full flex flex-col">
+            <div class="flex justify-between p-6 sm:hidden">
+                <h3 class="font-bold text-xs font-montserrat text-gray-800 ">
+                    Edit your search
+                </h3>
+                <button id="cerrarModal" class="font-bold text-xl text-gray-800">
+                   X
+                </button>
+            </div>
+            <!-- Searchbox -->
+            <div class="border border-gray-200 flex flex-col w-[95%] rounded-2xl self-center">
+                <!-- locación -->
+                <div class="p-4 border-b border-gray-200">
+                    <h3 class="text-[10px] font-montserrat font-bold text-gray-600">LOCATION</h3>
+                    <input 
+                        type="text"
+                        id="location-search"
+                        placeholder="Add location"
+                        class="w-full text-sm font-montserrat outline-nome placeholder-gray-400"
+                    />
+                </div>
+                <!-- Huespedes -->
+                <div class="p-4">
+                    <h3 class="text-[10px] font-montserrat font-bold text-gray-600">
+                        GUESTS
+                    </h3>
+                    <p class="text-sm font-montserrat text-gray-400">Add guests</p>
+                </div>
+            </div>
+            <!-- Boton de busqueda -->
+            <div class="self-center mt-8">
+                <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    search
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    
     
 </body>
 </html>
