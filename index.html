@@ -16,7 +16,7 @@
         </div>
         <!-- Searchbar -->
          <div class="flex justify-center sm:pr-4">
-            <search id="searchBar" class="flex mt-2 border border-gray-200 shadow-sm rounded-2xl w-[90%] sm:w-75" >
+            <search id="searchBar" class="flex mt-2 border border-gray-200 shadow-sm rounded-2xl w-[90%] sm:w-75 cursor-pointer">
                 <div class="flex-1 border-r border-gray-200 flex items-center justify-center py-3">
                     <p class="text-gray-400 text-xs text-center font-montserrat">Add location</p>
                 </div>
@@ -24,8 +24,8 @@
                     <p class="text-gray-400 text-xs text-center font-montserrat">Add guests</p>
                 </div>
                 <div class="flex items-center justify-center p-3">
-                    <button class="p-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 stroke-red-400">
+                    <button class="p-1 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 stroke-red-400 cursor-pointer">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
                     </button>
@@ -68,13 +68,13 @@
                         placeholder="Add location"
                         class="w-full text-sm font-montserrat outline-none placeholder-gray-400"
                     />
-                </div>
-                <!-- Suggestions container -->
-                <div id="location-suggestions" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-2xl mt-2 shadow-sm max-h-60 overflow-y-auto z-10 hidden">
+                    <!-- Suggestions container -->
+                    <div id="location-suggestions" class="absolute top-full left-0 right-0 bg-white mt-2 max-h-60 overflow-y-auto z-10 hidden">
 
+                    </div>
                 </div>
                 <!-- Guests -->
-                <div class="p-4 sm:border-r border-gray-200 flex-1">
+                <div class="p-4 sm:border-r border-gray-200 flex-1 cursor-pointer">
                     <h3 class="text-[10px] sm:text-xs font-montserrat font-bold text-gray-600">
                         GUESTS
                     </h3>
@@ -82,8 +82,8 @@
                 </div>
                 <!-- Search button desktop -->
                 <div class="hidden sm:flex items-center justify-center p-2 flex-1">
-                    <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4">
+                    <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 cursor-pointer">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
                         search
@@ -92,8 +92,8 @@
             </div>
             <!-- Search button Mobile-->
             <div class="self-center mt-8 sm:hidden">
-                <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4">
+                <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 cursor-pointer">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                     </svg>
                     search
@@ -102,8 +102,5 @@
         </div>
     </div>
 
-
-    
-    
 </body>
 </html>
