@@ -1,14 +1,10 @@
 import { stays } from "./stays.js";
-import { crearCards } from "./utils.js";
+import { renderStays } from "./utils.js";
+import { initModal } from "./modal.js"
 
-//Contenedor de cards
-let contenedorStays = document.querySelector("#stays-container");
-stays.forEach((stay) => {
-    contenedorStays.innerHTML += crearCards(stay);
-})
+function init() {
+    renderStays(stays);
+    initModal();
+}
 
-//Contador de cards mostradas
-let staysContador = document.querySelector("#contador-stays");
-staysContador.textContent = "12+ stays";
-//staysContador.textContent = `${stays.length}+ stays`;
-
+document.addEventListener("DOMContentLoaded", init);

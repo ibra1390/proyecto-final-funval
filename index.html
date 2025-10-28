@@ -16,7 +16,7 @@
         </div>
         <!-- Searchbar -->
          <div class="flex justify-center sm:pr-4">
-            <search class="flex mt-2 border border-gray-200 shadow-sm rounded-2xl w-[90%] sm:w-75" >
+            <search id="searchBar" class="flex mt-2 border border-gray-200 shadow-sm rounded-2xl w-[90%] sm:w-75" >
                 <div class="flex-1 border-r border-gray-200 flex items-center justify-center py-3">
                     <p class="text-gray-400 text-xs text-center font-montserrat">Add location</p>
                 </div>
@@ -38,47 +38,60 @@
     <main class="flex flex-col p-5 sm:m-5 lg:m-6 xl:m-7">
         <div class="flex justify-between">
             <h2 class="text-2xl font-bold font-montserrat">Stays in Finland</h2>
-            <p id="contador-stays" class="mt-2 text-gray-800 font-montserrat text-sm md:text-base"></p>
+            <p id="stays-counter" class="mt-2 text-gray-800 font-montserrat text-sm md:text-base"></p>
         </div>
         <!-- Cards container -->
         <div id="stays-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-            <!-- Cards generadas dinamicamente -->
+            <!-- Cards generated dynamically -->
         </div>
     </main> 
 
-    <!-- Modal para filtros -->
-    <div id="modal" class="bg-black/50 inset-0 fixed z-50">
-        <div class="bg-white h-[80%] w-full flex flex-col">
+    <!-- Modal for filters -->
+    <div id="modal" class="hidden bg-black/50 inset-0 fixed z-50">
+        <div class="bg-white h-[80%] sm:h-[55%] w-full flex flex-col sm:p-10">
             <div class="flex justify-between p-6 sm:hidden">
                 <h3 class="font-bold text-xs font-montserrat text-gray-800 ">
                     Edit your search
                 </h3>
-                <button id="cerrarModal" class="font-bold text-xl text-gray-800">
+                <button id="closeModal" class="font-bold text-xl text-gray-800">
                    X
                 </button>
             </div>
             <!-- Searchbox -->
-            <div class="border border-gray-200 flex flex-col w-[95%] rounded-2xl self-center">
-                <!-- locación -->
-                <div class="p-4 border-b border-gray-200">
-                    <h3 class="text-[10px] font-montserrat font-bold text-gray-600">LOCATION</h3>
+            <div class="border border-gray-200 flex flex-col sm:flex-row w-[95%] sm:w-[90%] rounded-2xl self-center shadow-sm sm:mt-10">
+                <!-- location -->
+                <div class="p-4 border-b sm:border-b-0 sm:border-r border-gray-200 relative flex-1">
+                    <h3 class="text-[10px] sm:text-xs font-montserrat font-bold text-gray-600">LOCATION</h3>
                     <input 
                         type="text"
                         id="location-search"
                         placeholder="Add location"
-                        class="w-full text-sm font-montserrat outline-nome placeholder-gray-400"
+                        class="w-full text-sm font-montserrat outline-none placeholder-gray-400"
                     />
                 </div>
-                <!-- Huespedes -->
-                <div class="p-4">
-                    <h3 class="text-[10px] font-montserrat font-bold text-gray-600">
+                <!-- Suggestions container -->
+                <div id="location-suggestions" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-2xl mt-2 shadow-sm max-h-60 overflow-y-auto z-10 hidden">
+
+                </div>
+                <!-- Guests -->
+                <div class="p-4 sm:border-r border-gray-200 flex-1">
+                    <h3 class="text-[10px] sm:text-xs font-montserrat font-bold text-gray-600">
                         GUESTS
                     </h3>
                     <p class="text-sm font-montserrat text-gray-400">Add guests</p>
                 </div>
+                <!-- Search button desktop -->
+                <div class="hidden sm:flex items-center justify-center p-2 flex-1">
+                    <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                        search
+                    </button>
+                </div>
             </div>
-            <!-- Boton de busqueda -->
-            <div class="self-center mt-8">
+            <!-- Search button Mobile-->
+            <div class="self-center mt-8 sm:hidden">
                 <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />

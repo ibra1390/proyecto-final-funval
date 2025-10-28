@@ -4,14 +4,14 @@
  * desde el archivo principal para realizar varias operaciones.
  */
 
-export function crearCards({superHost, type, beds, photo, title, rating}) {
-    //Si es SuperHost o no
+export function createCards({superHost, type, beds, photo, title, rating}) {
+    //check if it is SuperHost or not
     let superHostHTML = "";
     if (superHost) {
         superHostHTML = `<span class="border border-gray-800 rounded-2xl px-3 py-1 text-xs font-bold font-montserrat text-gray-800">SUPERHOST</span>`;
     }
 
-    //camas con valor null
+    //check beds with null values
     let  typeHTML = "";
     if (beds !== null) {
         typeHTML = typeHTML = `<span class="text-xs sm:text-base font-montserrat text-gray-500">${type} . ${beds} beds</span>`;
@@ -19,7 +19,7 @@ export function crearCards({superHost, type, beds, photo, title, rating}) {
         typeHTML = `<span class="text-xs sm:text-base font-montserrat text-gray-500">${type}</span>`;
     }
 
-    //cards para stays
+    //cards for stays
     return `
         <div>
             <div class="rounded-2xl overflow-hidden">
@@ -48,4 +48,17 @@ export function crearCards({superHost, type, beds, photo, title, rating}) {
     `;
 }
 
+export function renderStays(stays) {
+    // Cards container
+    let staysContainer = document.querySelector("#stays-container");
 
+    staysContainer.innerHTML = "";
+    stays.forEach((stay) => {
+        staysContainer.innerHTML += createCards(stay);
+    });
+
+    // Stays counter
+    let staysCounter = document.querySelector("#stays-counter");
+    staysCounter.textContent = "12+ stays";
+    // staysCounter.textContent = `${stays.length}+ stays`;
+}
