@@ -37,7 +37,7 @@
     <!-- main -->
     <main class="flex flex-col p-5 sm:m-5 lg:m-6 xl:m-7">
         <div class="flex justify-between">
-            <h2 class="text-2xl font-bold font-montserrat">Stays in Finland</h2>
+            <h2 id="main-title" class="text-2xl font-bold font-montserrat">Stays in Finland</h2>
             <p id="stays-counter" class="mt-2 text-gray-800 font-montserrat text-sm md:text-base"></p>
         </div>
         <!-- Cards container -->
@@ -71,7 +71,7 @@
                         class="w-full text-sm font-montserrat outline-none placeholder-gray-400"
                     />
                     <!-- Suggestions container -->
-                    <div id="location-suggestions" class="absolute top-full left-0 right-0 bg-white mt-2 max-h-60 overflow-y-auto z-10 hidden">
+                    <div id="location-suggestions" class="absolute top-full left-0 right-0 bg-white mt-2 z-10 hidden">
 
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                 </div>
                 <!-- Search button desktop -->
                 <div class="hidden sm:flex items-center justify-center p-2 flex-1">
-                    <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10 cursor-pointer">
+                    <button class="search-btn bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 cursor-pointer">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
@@ -130,7 +130,7 @@
             </div>
             <!-- Search button Mobile-->
             <div class="self-center mt-auto mb-8 sm:hidden">
-                <button class="bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10 cursor-pointer">
+                <button class="search-btn bg-red-400 text-white rounded-2xl font-montserrat flex py-2 items-center justify-center gap-2 w-32 h-10 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 cursor-pointer">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                     </svg>

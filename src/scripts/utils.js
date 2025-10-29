@@ -51,14 +51,23 @@ export function createCards({superHost, type, beds, photo, title, rating}) {
 export function renderStays(stays) {
     // Cards container
     let staysContainer = document.querySelector("#stays-container");
-
     staysContainer.innerHTML = "";
-    stays.forEach((stay) => {
-        staysContainer.innerHTML += createCards(stay);
-    });
 
-    // Stays counter
-    let staysCounter = document.querySelector("#stays-counter");
-    staysCounter.textContent = "12+ stays";
-    // staysCounter.textContent = `${stays.length}+ stays`;
+    //No results found
+    if (stays.length === 0) {
+        staysContainer.innerHTML = `
+            <div class="col-span-full text-center py-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <h3 class="text-2xl font-bold font-montserrat text-gray-800 mb-3">No stays found</h3>
+                <p class="text-gray-500 font-montserrat text-lg">Try adjusting your search filters</p>
+            </div>
+        `;
+    } else {
+        stays.forEach((stay) => {
+            staysContainer.innerHTML += createCards(stay);
+        });
+    }
 }
+
