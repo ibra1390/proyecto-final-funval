@@ -22,18 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentTheme = localStorage.getItem("theme");
     if (currentTheme === "dark") {
         all.classList.add("dark");
-        darkButton.checked = true;
+        darkButton.checked = true; //The switch shows the correct theme
+        console.log("Dark mode applied")
+    } else {
+        console.log("Light mode applied")
     }
     
     darkButton.addEventListener("click", () => {
         all.classList.toggle("dark");
-
+        // Update local storage with new theme
         if (all.classList.contains("dark")) {
             localStorage.setItem("theme", "dark");
             darkButton.checked = true;
+            console.log("Switched to dark mode")
         } else {
             localStorage.setItem("theme", "light");
             darkButton.checked = false;
+            console.log("Switched to light mode")
         }
     });
 });
