@@ -24,7 +24,8 @@ function searchStays() {
     let results = stays;
     if (location) {
         results = results.filter(({city, country}) => 
-            `${city}, ${country}`.toLowerCase().includes(location.toLowerCase())
+            //changed from "===" to "includes" to allow partial matching
+            `${city}, ${country}`.toLowerCase().includes(location.toLowerCase()) 
         );
     }
     if (guests > 0) {
@@ -62,3 +63,4 @@ function updateTitle(count, location = "") {
         }
     } 
 }
+
