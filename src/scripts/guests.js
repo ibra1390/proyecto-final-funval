@@ -83,9 +83,9 @@ function updateGuests() {
 
     if (totalGuests === 0) {
         modalText.classList.add("text-gray-400");
-        modalText.classList.remove("text-gray-800");
+        modalText.classList.remove("text-gray-800", "dark:text-gray-300");
     } else {
-        modalText.classList.add("text-gray-800");
+        modalText.classList.add("text-gray-800", "dark:text-gray-100");
         modalText.classList.remove("text-gray-400");
     }
 
@@ -95,11 +95,11 @@ function updateGuests() {
         headerText.textContent = displayText;
 
         if (totalGuests === 0) {
-            headerText.classList.add("text-gray-400");
-            headerText.classList.remove("text-gray-800");
+            headerText.classList.add("text-gray-400", "dark:text-gray-500");
+            headerText.classList.remove("text-gray-800", "dark:text-gray-100");
         } else {
-            headerText.classList.add("text-gray-800");
-            headerText.classList.remove("text-gray-400");
+            headerText.classList.add("text-gray-800", "dark:text-gray-100");
+            headerText.classList.remove("text-gray-400", "dark:text-gray-500");
         }
     }
 }
