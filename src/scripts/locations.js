@@ -73,7 +73,7 @@ function showSuggestions(locations, container) {
 }
 
 //Display location in searchbar
-function updateLocation(location) {
+export function updateLocation(location) {
     let locationText = document.querySelector("#searchBar .location-text");
     if (locationText) {
        locationText.textContent = location;
