@@ -1,4 +1,4 @@
-import { initLocations } from "./locations.js";
+import { initLocations, updateLocation } from "./locations.js";
 import { initGuests, getGuestsCount } from "./guests.js";
 import { stays } from "./stays.js";
 import { renderStays } from "./utils.js";
@@ -23,7 +23,10 @@ function searchStays() {
     //Filter 
     let results = stays;
     if (location) {
-        results = results.filter(({city, country}) => `${city}, ${country}` === location);
+        results = results.filter(({city, country}) => 
+            //changed from "===" to "includes" to allow partial matching
+            `${city}, ${country}`.toLowerCase().includes(location.toLowerCase()) 
+        );
     }
     if (guests > 0) {
         results = results.filter(({maxGuests}) => maxGuests >= guests);
@@ -34,6 +37,7 @@ function searchStays() {
     //Display results
     renderStays(results);
     updateTitle(results.length, location);
+    updateLocation(location);
     
     //Close modal
     document.querySelector("#modal").classList.add("hidden");
@@ -59,3 +63,4 @@ function updateTitle(count, location = "") {
         }
     } 
 }
+
